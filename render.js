@@ -35,18 +35,17 @@ var scriptTag = document.getElementById('icf-emblem');
 
   // accelerate
   var accelerate = 1;
-  var dataAccelerate = parseInt(scriptTag.getAttribute("data-accelerate"));
+  var dataAccelerate = parseFloat(scriptTag.getAttribute("data-accelerate"));
   if (dataAccelerate) { accelerate = dataAccelerate; }
 
   // color
   var color = "black";
-  var dataColor = parseFloat(scriptTag.getAttribute("data-color"));
-  if (dataColor) { accelerate = dataColor; }
+  var dataColor = scriptTag.getAttribute("data-color");
+  if (dataColor) { color = dataColor; }
 
 // calc offset based on user options
 yawOffset = (-2.4 / fps) * accelerate;
 rollOffset = (-0.6 / fps) * accelerate;
-console.log(yawOffset);
 
 /* create SVG element */
 document.write("<svg id='emblemSvg' version='1.1' width='" + size + "' height='" + size + "' viewBox='0 0 " + w + " " + h + "' xmlns='http://www.w3.org/2000/svg' fill='none' preserveAspectRatio='xMinYMin'></svg>");
