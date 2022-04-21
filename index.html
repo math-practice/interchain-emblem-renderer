@@ -6,21 +6,43 @@
   </head>
   <body>
     <section>
-      <div id="emblem" class="svg-container" onclick="downloadSVG(this)"></div>
-      <div class="p-l">
-        <h1 class="p-t">Interchain Foundation Emblem Renderer v1</h1>
-        <p>Click image to save as SVG. Please make sure to "Outline Stroke" before manipulating the shape in apps such as Illustrator, to preserve the stroke width upon scaling.</p>
-        <p>To 'rotate' the emblem, pass yaw and roll values as url parameters:</p>
-        <p class="t-mono"><span class="t-light">/?</span>yaw={{deg}}&roll={{deg}}</p>
-        <p>For animation, offset yaw and roll as below. Pitch should stay constant at 0 deg throughout.</p>
-        <ul>
-          <li class="t-mono"><span class="t-light">yaw:&nbsp;</span> -2.4 deg /second</li>
-          <li class="t-mono"><span class="t-light">roll:</span> -0.6 deg /second</li>
-        </ul>
+      <div class="svg-container">
+        <script id="icf-emblem" src="render.js" data-size="120" data-yaw="0" data-roll="0"></script>
+        <p class="p-t">
+          <label class="p-r">Yaw</label><input type="number" id="inputYaw" value="0" class="t-mono">
+          <label class="p-r">Roll</label><input type="number" id="inputRoll" value="0" class="t-mono">
+          (deg)
+        </p>
+      </div>
+      <div class="p-l2">
+        <h1>Interchain Foundation Emblem Renderer v1</h1>
+        
+        <p>1. Click image to download as SVG. When manipulating the file in apps such as Illustrator, please make sure to "Outline Stroke" to preserve the stroke width upon scaling.</p>
+        <p>2. For placement of animated emblem on a webpage, put below code in a place where the emblem needs to be displayed.</p>
+        <xmp><script id="icf-emblem" src="https://math-practice.github.io/interchain-emblem-renderer/render.js" data-animate data-size="300"></script></xmp>
+        <p>Full documentation of the script, including options such as display size, animation speed and framerate, can be found on <a href="https://github.com/math-practice/interchain-emblem-renderer/">GitHub</a>.</p>
       </div>
     </section>
-    <script src="https://d3js.org/d3.v7.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/d3-geo-projection@4"></script>
-    <script src="assets/main.js"></script>
+    <script>
+      var inputs = document.querySelectorAll('input')
+      for (let i = 0; i < inputs.length; i++) {
+        inputs[i].addEventListener('input', (event) => {
+          yaw = document.querySelector('#inputYaw').value;
+          roll = document.querySelector('#inputRoll').value;
+          drawPaths();
+        });
+      }
+
+      var emblemSvg = document.querySelector("#emblemSvg");
+      emblemSvg.addEventListener("click", function(){ 
+        var html = this.outerHTML;
+        var blob = new Blob([html.toString()]);
+        var element = document.createElement("a");
+        element.download = "InterchainFoundation-Emblem.svg";
+        element.href = window.URL.createObjectURL(blob);
+        element.click();
+        element.remove();
+      });
+    </script>>
   </body>
 </html>

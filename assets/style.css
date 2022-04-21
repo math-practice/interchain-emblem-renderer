@@ -8,15 +8,29 @@ body {
 h1 {
   font-weight: bold;
 }
-h1, p {
-  padding-bottom: 1rem;
+h1, p, xmp {
+  margin-bottom: 1rem;
+}
+input, xmp {
+  width: 50px;
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+  display: inline-block;
+  margin-right: 1rem;
+  background-color: #fff;
+}
+xmp {
+  width: inherit;
+  font-size: 0.9rem;
+  white-space: pre-wrap;
+  word-break: break-all;
 }
 section {
-  width: 800px;
+  width: 720px;
   display: flex;
   margin: 60px auto;
 }
-#emblem svg {
+.svg-container svg {
   background: #fff;
   width: 320px;
   height: 320px;
@@ -24,14 +38,17 @@ section {
   box-shadow: 0px 5px 10px rgba(0,0,0,0.25);
   transition: transform 0.2s;
 }
-#emblem svg:hover {
+.svg-container svg:hover {
   cursor: pointer;
   transform: scale(0.95) rotate(-3deg);
 }
 .p-t {
   padding-top: 1rem;
 }
-.p-l {
+.p-r {
+  padding-right: 1rem;
+}
+.p-l2 {
   padding-left: 2rem;
 }
 .t-mono {
@@ -39,4 +56,7 @@ section {
 }
 .t-light {
   color: rgb(144, 144, 144);
+}
+.t-bold {
+  font-weight: bold;
 }
