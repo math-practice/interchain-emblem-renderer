@@ -8,7 +8,7 @@ var w = 640, h = 640,         // svg viewBox size
     graticuleStepY = 90 / 3;  // vertical lines every 30deg */
 
 /* display options */
-var scriptTag = document.getElementById('icf-emblem');
+var scriptTag = document.currentScript;
 
   // size
   var size = 640;
@@ -48,14 +48,15 @@ yawOffset = (-2.4 / fps) * accelerate;
 rollOffset = (-0.6 / fps) * accelerate;
 
 /* create SVG element */
-document.write("<svg id='emblemSvg' version='1.1' width='" + size + "' height='" + size + "' viewBox='0 0 " + w + " " + h + "' xmlns='http://www.w3.org/2000/svg' fill='none' preserveAspectRatio='xMinYMin'></svg>");
+var randomId = "emblem-" + Date.now();
+document.write("<svg class='emblem-svg' version='1.1' width='" + size + "' height='" + size + "' viewBox='0 0 " + w + " " + h + "' xmlns='http://www.w3.org/2000/svg' fill='none' preserveAspectRatio='xMinYMin'></svg>");
 
-var svg = d3.select("#emblemSvg");
+var svg = d3.selectAll(".emblem-svg");
 svg.append("path")
-  .attr("id", "sphere").attr("stroke", color)
+  .attr("stroke", color)
   .attr("stroke-width", strokeWidth);
 svg.append("path")
-  .attr("id", "graticule").attr("stroke", color)
+  .attr("stroke", color)
   .attr("stroke-width", strokeWidth);
 
 function drawPaths() {
@@ -72,11 +73,11 @@ function drawPaths() {
   .stepMinor([graticuleStepX,graticuleStepY])
   .extentMinor([[ -180,-90 + graticuleStepY],[180,90.01 - graticuleStepY]])
 
-  d3.select("#sphere")
+  d3.selectAll(".emblem-svg path:first-child")
   .datum({type: "Sphere"})
   .attr("d", path);
 
-  d3.select("#graticule")
+  d3.selectAll(".emblem-svg path:last-child")
   .datum(graticule)
   .attr("d", path);
   
