@@ -81,7 +81,7 @@ function drawPaths() {
 }
 if (animate) {
   var delay = 1 / fps * 1000;
-  window.setInterval(drawPaths, delay);
+  var timer = setInterval(drawPaths, delay);
 } else {
   drawPaths();
 }
