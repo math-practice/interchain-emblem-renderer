@@ -10,7 +10,7 @@ Interchain Foundation's Emblem is generated using d3 geo projection.
 - When manipulating the generated shape in apps such as Illustrator, please make sure to *Outline Stroke* to preserve the stroke width upon scaling.
 
 ## Embed animated emblem
-For placement of animated emblem on a webpage, put one of the below code in a place where the emblem needs to be displayed. [This demo page](https://math-practice.github.io/interchain-emblem-renderer/demo.html) shows embedded emblem. Various display options can be set as `data-*` attributes.
+For placement of animated emblem on a webpage, put one of the below code in a place where the emblem needs to be displayed. [This demo page](https://math-practice.github.io/interchain-emblem-renderer/demo/) shows embedded emblem. Various display options can be set as `data-*` attributes.
 
 #### Basic example
 Below code will embed the animated emblem right below itself with `300px` width and height. If `data-animated` attribute is present, the emblem will be animated.
