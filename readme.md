@@ -10,23 +10,22 @@ Interchain Foundation's Emblem is generated using d3 geo projection.
 - When manipulating the generated shape in apps such as Illustrator, please make sure to *Outline Stroke* to preserve the stroke width upon scaling.
 
 ## Embed animated emblem
-For placement of animated emblem on a webpage, put one of the below code in a place where the emblem needs to be displayed. [This page](https://math-practice.github.io/interchain-emblem-renderer/demo.html) showcases embedded emblems.
+For placement of animated emblem on a webpage, put one of the below code in a place where the emblem needs to be displayed. [This demo page](https://math-practice.github.io/interchain-emblem-renderer/demo.html) shows embedded emblem. Various display options can be set as `data-*` attributes.
 
 #### Basic example
-This code will place the emblem in its place, using all the default setting except `data-size`, which is set to be `300`px.
+Below code will emben the animated emblem right below itself with `300px` width and height. If `data-animated` attribute is present, the emblem will be animated.
 ```html
-<script id="icf-emblem" src="https://math-practice.github.io/interchain-emblem-renderer/render.js" data-animated data-size="300"></script>
+<script src="https://math-practice.github.io/interchain-emblem-renderer/render.js" data-animated data-size="300"></script>
 ```
 
-#### With more control
-This code will place the emblem in its place, with all possible options set as `data-*` attributes. .
+#### With more options
+Below code will emben the animated emblem right below itself with all possible display options set.
 
 ```html
-<script id="icf-emblem" src="https://math-practice.github.io/interchain-emblem-renderer/render.js" data-animated data-size="300" data-yaw="30" data-roll="60" data-fps="60" data-accelerate="2" data-color="red"></script>
+<script src="https://math-practice.github.io/interchain-emblem-renderer/render.js" data-animated data-size="300" data-yaw="30" data-roll="60" data-fps="60" data-accelerate="2" data-color="red"></script>
 ```
 
 #### Display options
-The attributes of the animated emblem can be set with `data-*` attributes. 
 
 | Attribute         | Type    | Default  | Description                                                                                                                 |
 | ----------------- | ------- | ------------- | --------------------------------------------------------------------------------------------------------------------------- |

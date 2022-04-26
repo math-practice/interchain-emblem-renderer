@@ -7,7 +7,7 @@
   <body>
     <section>
       <div class="svg-container">
-        <script id="icf-emblem" src="render.js" data-size="120" data-yaw="0" data-roll="0"></script>
+        <script src="render.js" data-size="120"></script>
         <p class="p-t">
           <label class="p-r">Yaw</label><input type="number" id="inputYaw" value="0" class="t-mono">
           <label class="p-r">Roll</label><input type="number" id="inputRoll" value="0" class="t-mono">
@@ -17,10 +17,9 @@
       <div class="p-l2">
         <h1>Interchain Foundation Emblem Renderer v1</h1>
         
-        <p>1. Click image to download as SVG. When manipulating the file in apps such as Illustrator, please make sure to "Outline Stroke" to preserve the stroke width upon scaling.</p>
-        <p>2. For placement of animated emblem on a webpage, put below code in a place where the emblem needs to be displayed.</p>
+        <p>1. Click image to download as SVG. Please make sure to "Outline Stroke" in apps such as Illustrator to preserve the stroke weight upon scaling.</p>
+        <p>2. For placement of animated emblem on a webpage, put below code where it needs to be shown. For various display options, see documentation on <a href="https://github.com/math-practice/interchain-emblem-renderer/">GitHub</a>.</p>
         <xmp><script src="https://math-practice.github.io/interchain-emblem-renderer/render.js" data-animate data-size="300"></script></xmp>
-        <p>Full documentation of the script, including options such as display size, animation speed and framerate, can be found on <a href="https://github.com/math-practice/interchain-emblem-renderer/">GitHub</a>.</p>
       </div>
     </section>
     <script>
@@ -33,12 +32,12 @@
         });
       }
 
-      var emblemSvg = document.querySelector("#emblemSvg");
+      var emblemSvg = document.querySelector(".svg-container svg");
       emblemSvg.addEventListener("click", function(){ 
         var html = this.outerHTML;
         var blob = new Blob([html.toString()]);
         var element = document.createElement("a");
-        element.download = "InterchainFoundation-Emblem.svg";
+        element.download = "Interchain-Foundation-Emblem.svg";
         element.href = window.URL.createObjectURL(blob);
         element.click();
         element.remove();
