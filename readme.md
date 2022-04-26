@@ -4,22 +4,23 @@ Interchain Foundation's Emblem is generated using d3 geo projection.
 - Static rendering of the emblem can be made from [here](https://math-practice.github.io/interchain-emblem-renderer/) and can be downloaded as SVG.
 - Animated emblem can be embedded to a webpage using JavaScript. See below.
 
-## Download static emblem
-[This page](https://math-practice.github.io/interchain-emblem-renderer/) creates the emblem in given `yaw` and `roll`, which can be downloaded as SVG. A few notes:
-- The default state of the emblem is `yaw: 0` and `roll:0`. Use this setting unless there's a compelling reason not to.
-- When manipulating the generated shape in apps such as Illustrator, please make sure to *Outline Stroke* to preserve the stroke width upon scaling.
+## Static emblem
+<img style="background:white" src="assets/img/Interchain-Foundation-Emblem.svg">
 
-## Embed animated emblem
+The static emblem can be generated in SVG format from [this page](https://math-practice.github.io/interchain-emblem-renderer/).
+- The default state of the emblem is `yaw: 0` and `roll:0`. Use this setting unless there's a compelling reason not to.
+- Please make sure to *Outline Stroke* in apps such as Illustrator to preserve the stroke weight upon scaling.
+
+## Animated emblem
 For placement of animated emblem on a webpage, put one of the below code in a place where the emblem needs to be displayed. [This demo page](https://math-practice.github.io/interchain-emblem-renderer/demo/) shows embedded emblem. Various display options can be set as `data-*` attributes.
 
 #### Basic example
-Below code will embed the animated emblem right below itself with `300px` width and height. If `data-animated` attribute is present, the emblem will be animated.
+Below code will embed the animated emblem below itself with `300px` width and height. If `data-animated` attribute is present, the emblem will be animated.
 ```html
 <script src="https://math-practice.github.io/interchain-emblem-renderer/render.js" data-animated data-size="300"></script>
 ```
 
 #### With more options
-Below code will embed the animated emblem right below itself with all possible display options set.
 
 ```html
 <script src="https://math-practice.github.io/interchain-emblem-renderer/render.js" data-animated data-size="300" data-yaw="30" data-roll="60" data-fps="60" data-accelerate="2" data-color="red"></script>
