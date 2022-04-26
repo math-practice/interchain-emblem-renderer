@@ -13,13 +13,13 @@ Interchain Foundation's Emblem is generated using d3 geo projection.
 For placement of animated emblem on a webpage, put one of the below code in a place where the emblem needs to be displayed. [This demo page](https://math-practice.github.io/interchain-emblem-renderer/demo.html) shows embedded emblem. Various display options can be set as `data-*` attributes.
 
 #### Basic example
-Below code will emben the animated emblem right below itself with `300px` width and height. If `data-animated` attribute is present, the emblem will be animated.
+Below code will embed the animated emblem right below itself with `300px` width and height. If `data-animated` attribute is present, the emblem will be animated.
 ```html
 <script src="https://math-practice.github.io/interchain-emblem-renderer/render.js" data-animated data-size="300"></script>
 ```
 
 #### With more options
-Below code will emben the animated emblem right below itself with all possible display options set.
+Below code will embed the animated emblem right below itself with all possible display options set.
 
 ```html
 <script src="https://math-practice.github.io/interchain-emblem-renderer/render.js" data-animated data-size="300" data-yaw="30" data-roll="60" data-fps="60" data-accelerate="2" data-color="red"></script>
